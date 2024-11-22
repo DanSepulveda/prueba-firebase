@@ -1,0 +1,27 @@
+---
+interface Char{
+    name: string
+    image: string
+}
+
+export async function getStaticPaths() {
+    const response: Char[] = await fetch('https://hp-api.onrender.com/api/characters').then(res=>res.json())
+    const data = response.map(char=>{
+        return {
+            params: {nombre: char.name.toLowerCase().replaceAll(' ', '-'), image: char.image},
+            props: {
+                image: char.image
+            }
+        }
+    })
+    return data
+}
+
+const {nombre} = Astro.params;
+const {image} =Astro.props
+---
+
+<div>
+    <h1>{nombre}</h1>
+    <img alt={nombre} src={image} >
+</div>
