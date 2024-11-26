@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && firebase deploy --only hosting"
+    "deploy": "time astro build --silent && time firebase deploy --only hosting --token 1//0hxg4GVTxfnA0CgYIARAAGBESNwF-L9IrUxq7lINFYI0F4gdbtTlm_10KRkGAlpDqw2cKgr8Kv2qTmDHjO47fLDHhVCwMdcV6o7k",
+    "build:silent": "time astro build --silent"
   },
   "dependencies": {
     "astro": "^4.16.13",
