@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  Publish-to-Pages:
+    docker:
+      - image: cimg/node:18.7.0
+
+    steps:
+      - checkout
+      - run: npm ci --no-progress --no-audit --no-fund && npm run build
+      - run: npx wrangler pages deploy dist --project-name=prueba-firebase
+
+workflows:
+  Publish-to-Pages-workflow:
+    jobs:
+      - Publish-to-Pages
