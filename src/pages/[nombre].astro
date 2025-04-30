@@ -1,28 +1,28 @@
 ---
-interface Char{
-    name: string
-    // image: string
-}
+// interface Char{
+//     name: string
+//     // image: string
+// }
 
-export async function getStaticPaths() {
-    const response: Char = await fetch('https://i52s524f3kvdhx25t3tba6cce40hinne.lambda-url.us-east-2.on.aws/').then(res=>res.json())
-    // const data = response.map(char=>{
-    //     return {
-    //         params: {nombre: char.name.toLowerCase().replaceAll(' ', '-'), image: char.image},
-    //         props: {
-    //             image: char.image
-    //         }
-    //     }
-    // })
-    const lala = {
-        props: {nombre: response.name}
-    }
-    return lala
-}
+// export async function getStaticPaths() {
+//     const response: Char = await fetch('https://i52s524f3kvdhx25t3tba6cce40hinne.lambda-url.us-east-2.on.aws/').then(res=>res.json())
+//     // const data = response.map(char=>{
+//     //     return {
+//     //         params: {nombre: char.name.toLowerCase().replaceAll(' ', '-'), image: char.image},
+//     //         props: {
+//     //             image: char.image
+//     //         }
+//     //     }
+//     // })
+//     const lala = {
+//         props: {nombre: response.name}
+//     }
+//     return lala
+// }
 
 const data = await fetch('https://i52s524f3kvdhx25t3tba6cce40hinne.lambda-url.us-east-2.on.aws/').then(res=>res.json()).then(data=>data)
 
-const {nombre} = Astro.props;
+// const {nombre} = Astro.props;
 // const {image} =Astro.props
 ---
 
