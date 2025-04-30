@@ -15,12 +15,12 @@ export async function getStaticPaths() {
     //     }
     // })
     const lala = {
-        params: {nombre: response.name}
+        props: {nombre: response.name}
     }
     return lala
 }
 
-const {nombre} = Astro.params;
+const {nombre} = Astro.props;
 // const {image} =Astro.props
 ---
 
