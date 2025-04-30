@@ -20,11 +20,13 @@ export async function getStaticPaths() {
     return lala
 }
 
+const data = await fetch('https://i52s524f3kvdhx25t3tba6cce40hinne.lambda-url.us-east-2.on.aws/').then(res=>res.json()).then(data=>data)
+
 const {nombre} = Astro.props;
 // const {image} =Astro.props
 ---
 
 <div>
-    <h1>{nombre}</h1>
+    <h1>{data.name}</h1>
     <!-- <img alt={nombre} src={image} > -->
 </div>
